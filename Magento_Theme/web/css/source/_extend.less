@@ -1,0 +1,183 @@
+//
+// Icons
+//
+
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+  //
+  //  Header
+  //  ---------------------------------------------
+  .page-header {
+    .lib-css(background-color, @header__background-color);
+    border-bottom: none;
+    margin-bottom: @indent__base;
+
+    .panel.wrapper {
+      .lib-css(background-color, @header-panel__background-color);
+      .lib-css(color, @header-panel__text-color);
+    }
+  }
+
+  .header {
+      &.content:extend(.abs-add-clearfix all) {
+          padding-top: 0px;
+          position: relative;
+      }
+  }
+
+  .logo {
+    margin-top: 0px;
+    margin-bottom: 10px;
+  }
+  .social {
+    .logo {
+      width: 100px;
+    }
+    ul {
+      margin-top: 10px;
+    }
+    display: inline-block;
+    > li {
+      display: inline;
+    }
+    a {
+      margin-right: 5px;
+      color: @color-white;
+      font-size: 20px;
+      font-family: 'Flaticon';
+      &.twitter:before {
+        content: '\f116';
+      }
+      &.linkedin:before {
+        content: '\f10e';
+      }
+      &.facebook:before {
+        content: '\f108';
+      }
+    }
+    a:hover {
+      color: @color-brand;
+      text-decoration: none;
+    }
+  }
+
+  //
+  //  Footer
+  //  ---------------------------------------------
+  .page-footer {
+    .lib-css(background-color, @footer__background-color);
+  }
+
+  .footer {
+    color: @color-white;
+    &.content {
+      .links {
+        text-transform: uppercase;
+        font-weight: bold;
+        ul {
+          padding-top: 5px;
+        }
+        a {
+          .lib-link(
+            @_link-color: @footer-links-color,
+            @_link-text-decoration: none,
+            @_link-color-visited: @footer-links-color,
+            @_link-text-decoration-visited: none,
+            @_link-color-hover: @footer-links-color-hover,
+            @_link-text-decoration-hover: none,
+            @_link-color-active: @footer-links-color-hover,
+            @_link-text-decoration-active: none
+          );
+          text-transform: none;
+          font-weight: normal;
+        }
+      }
+    }
+  }
+}
+
+//
+//  Navigation
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+  .page-footer {
+    .lib-css(background-color, @footer__background-color);
+  }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+  .page-footer {
+    .lib-css(background-color, @footer__background-color);
+  }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+  .page-header {
+    .panel.wrapper {
+      border-bottom: 0px;
+    }
+  }
+  .header {
+    &.content:extend(.abs-add-clearfix-desktop all) {
+      padding: 0px @indent__base;
+    }
+  }
+  .page-footer {
+    .lib-css(background-color, @footer__background-color);
+  }
+  .page-footer {
+      .lib-css(background, @footer__background-color);
+      margin-top: auto;
+      padding-bottom: @indent__m;
+
+      .switcher {
+          .options {
+              ul.dropdown {
+                  bottom: -@indent__s;
+                  left: 100%;
+                  margin: 0 0 0 @indent__base;
+                  top: auto;
+
+                  &:before,
+                  &:after {
+                      bottom: @indent__base - 7px;
+                      left: auto;
+                      right: 100%;
+                      top: auto;
+                  }
+
+                  &:before {
+                      .lib-css(border-color, transparent @dropdown-list__background transparent transparent);
+                  }
+
+                  &:after {
+                      .lib-css(border-color, transparent @dropdown-list-pointer__border transparent transparent);
+                      margin: 0 0 -1px -1px;
+                  }
+              }
+          }
+      }
+  }
+  .footer {
+    &.content {
+      .links {
+        li {
+          margin: 0 0 1px;
+        }
+      }
+    }
+  }
+}

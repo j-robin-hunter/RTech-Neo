@@ -1,0 +1,25 @@
+{
+    "name": "rtech/theme-frontend-neo",
+    "description": "Theme for RomaTech Magento Website",
+    "config": {
+        "sort-packages": true
+    },
+    "require": {
+        "php": "~7.1.3||~7.2.0",
+        "magento/framework": "*",
+        "magento/theme-frontend-luma": "*",
+        "magento/module-cms": "*",
+        "magento/checkout": "*",
+        "rtech/contact": "*"
+    },
+    "type": "magento2-theme",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ]
+    }
+}

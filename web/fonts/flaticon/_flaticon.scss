@@ -1,0 +1,95 @@
+    /*
+    Flaticon icon font: Flaticon
+    Creation date: 22/06/2016 15:08
+    */
+
+    @font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+    .fi:before{
+        display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+    }
+
+    .flaticon-aim-outlined-logotype:before { content: "\f100"; }
+.flaticon-android-social-outlined-logo:before { content: "\f101"; }
+.flaticon-apple-social-logo-outline:before { content: "\f102"; }
+.flaticon-behance-social-outlined-logo:before { content: "\f103"; }
+.flaticon-blogger-letter-logo-outline:before { content: "\f104"; }
+.flaticon-delicious-logotype-outline:before { content: "\f105"; }
+.flaticon-deviantart-outlined-logo:before { content: "\f106"; }
+.flaticon-dribbble-social-outlined-symbol:before { content: "\f107"; }
+.flaticon-facebook-logo-outline:before { content: "\f108"; }
+.flaticon-flickr-social-outlined-logo-in-a-circle:before { content: "\f109"; }
+.flaticon-forrst-outlined-logo:before { content: "\f10a"; }
+.flaticon-gdrive-outlined-logo:before { content: "\f10b"; }
+.flaticon-google-plus-outlined-logo-social-symbol:before { content: "\f10c"; }
+.flaticon-instagram-social-outlined-logo:before { content: "\f10d"; }
+.flaticon-linkedin-social-outline-logotype:before { content: "\f10e"; }
+.flaticon-paypal-outlined-logo:before { content: "\f10f"; }
+.flaticon-picassa-social-outlined-logo:before { content: "\f110"; }
+.flaticon-pinterest-outlined-logo:before { content: "\f111"; }
+.flaticon-share-button-outline:before { content: "\f112"; }
+.flaticon-skype-social-outlined-logo:before { content: "\f113"; }
+.flaticon-soundcloud-social-outlined-logotype-symbol:before { content: "\f114"; }
+.flaticon-tumblr-outlined-social-logo-symbol-of-a-letter:before { content: "\f115"; }
+.flaticon-twitter-social-outlined-logo:before { content: "\f116"; }
+.flaticon-vimeo-letter-logo-outline:before { content: "\f117"; }
+.flaticon-windows-social-outlined-logotype:before { content: "\f118"; }
+.flaticon-xbox-social-outline-logo:before { content: "\f119"; }
+.flaticon-youtube-play-button-outlined-social-symbol:before { content: "\f11a"; }
+.flaticon-zerply-social-outlined-logo:before { content: "\f11b"; }
+    
+    $font-Flaticon-aim-outlined-logotype: "\f100";
+    $font-Flaticon-android-social-outlined-logo: "\f101";
+    $font-Flaticon-apple-social-logo-outline: "\f102";
+    $font-Flaticon-behance-social-outlined-logo: "\f103";
+    $font-Flaticon-blogger-letter-logo-outline: "\f104";
+    $font-Flaticon-delicious-logotype-outline: "\f105";
+    $font-Flaticon-deviantart-outlined-logo: "\f106";
+    $font-Flaticon-dribbble-social-outlined-symbol: "\f107";
+    $font-Flaticon-facebook-logo-outline: "\f108";
+    $font-Flaticon-flickr-social-outlined-logo-in-a-circle: "\f109";
+    $font-Flaticon-forrst-outlined-logo: "\f10a";
+    $font-Flaticon-gdrive-outlined-logo: "\f10b";
+    $font-Flaticon-google-plus-outlined-logo-social-symbol: "\f10c";
+    $font-Flaticon-instagram-social-outlined-logo: "\f10d";
+    $font-Flaticon-linkedin-social-outline-logotype: "\f10e";
+    $font-Flaticon-paypal-outlined-logo: "\f10f";
+    $font-Flaticon-picassa-social-outlined-logo: "\f110";
+    $font-Flaticon-pinterest-outlined-logo: "\f111";
+    $font-Flaticon-share-button-outline: "\f112";
+    $font-Flaticon-skype-social-outlined-logo: "\f113";
+    $font-Flaticon-soundcloud-social-outlined-logotype-symbol: "\f114";
+    $font-Flaticon-tumblr-outlined-social-logo-symbol-of-a-letter: "\f115";
+    $font-Flaticon-twitter-social-outlined-logo: "\f116";
+    $font-Flaticon-vimeo-letter-logo-outline: "\f117";
+    $font-Flaticon-windows-social-outlined-logotype: "\f118";
+    $font-Flaticon-xbox-social-outline-logo: "\f119";
+    $font-Flaticon-youtube-play-button-outlined-social-symbol: "\f11a";
+    $font-Flaticon-zerply-social-outlined-logo: "\f11b";

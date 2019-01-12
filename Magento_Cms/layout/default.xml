@@ -1,0 +1,194 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+      <referenceBlock name="store.menu">
+        <block class="Magento\Framework\View\Element\Template" name="store.menu.logo" template="Magento_Theme::test.phtml" after="catalog.topnav" />
+        <container name="help_footer_links_container" label="Help Footer Links Container" htmlTag="div" htmlClass="links" after="catalog.topnav"/>
+      </referenceBlock>
+
+      <referenceBlock name="footer_links" remove="true" />
+
+      <referenceContainer name="footer">
+        <container name="help_footer_links_container" label="Help Footer Links Container" htmlTag="div" htmlClass="links" before="cms_footer_links_container"/>
+        <container name="what_footer_links_container" label="What Footer Links Container" htmlTag="div" htmlClass="links" before="cms_footer_links_container"/>
+        <container name="who_footer_links_container" label="Who Footer Links Container" htmlTag="div" htmlClass="links" before="cms_footer_links_container"/>
+        <container name="rtech_footer_contact_container" label="RTech Footer Contact Container" htmlTag="div" htmlClass="social block" before="cms_footer_links_container"/>
+      </referenceContainer>
+
+      <referenceContainer name="help_footer_links_container">
+          <block class="Magento\Framework\View\Element\Text" name="help.footer.title">
+            <arguments>
+              <argument name="text" xsi:type="string" translate="true">Helping You With</argument>
+            </arguments>
+          </block>
+        <block class="Magento\Framework\View\Element\Html\Links" name="help.footer.links"/>
+      </referenceContainer>
+
+      <referenceContainer name="what_footer_links_container">
+        <block class="Magento\Framework\View\Element\Text" name="what.footer.title">
+          <arguments>
+            <argument name="text" xsi:type="string">What We Do</argument>
+          </arguments>
+        </block>
+        <block class="Magento\Framework\View\Element\Html\Links" name="what.footer.links"/>
+      </referenceContainer>
+
+      <referenceContainer name="who_footer_links_container">
+        <block class="Magento\Framework\View\Element\Text" name="who.footer.title">
+          <arguments>
+            <argument name="text" xsi:type="string">Who We Are</argument>
+          </arguments>
+        </block>
+        <block class="Magento\Framework\View\Element\Html\Links" name="who.footer.links"/>
+      </referenceContainer>
+
+      <referenceContainer name="rtech_footer_contact_container">
+        <block class="Magento\Theme\Block\Html\Header\Logo" name="footer.logo">
+          <arguments>
+            <argument name="logo_file" xsi:type="string">images/logo-rev.svg</argument>
+            <argument name="logo_alt" xsi:type="string">Roma Technology Limited</argument>
+            <argument name="logo_img_width" xsi:type="number">150</argument>
+          </arguments>
+        </block>
+        <block class="RTech\Contact\Block\Contact" name="rtech_contact" template="RTech_Contact::contact.phtml"/>
+        <container name="rtech_social_links" htmlTag="div" htmlClass="social-container">
+          <block class="Magento\Framework\View\Element\Html\Links" name="rtech.social.links">
+            <arguments>
+              <argument name="css_class" xsi:type="string">social</argument>
+            </arguments>
+          </block>
+        </container>
+      </referenceContainer>
+
+      <referenceBlock name="help.footer.links">
+        <block class="Magento\Framework\View\Element\Html\Link\Current" name="account.link">
+          <arguments>
+            <argument name="label" xsi:type="string" translate="true">Your Account</argument>
+            <argument name="path" xsi:type="string">account</argument>
+          </arguments>
+        </block>
+        <block class="Magento\Framework\View\Element\Html\Link\Current" name="deliveries.link">
+          <arguments>
+            <argument name="label" xsi:type="string" translate="true">Deliveries</argument>
+            <argument name="path" xsi:type="string">deliveries</argument>
+          </arguments>
+        </block>
+        <block class="Magento\Framework\View\Element\Html\Link\Current" name="returns.link">
+          <arguments>
+            <argument name="label" xsi:type="string" translate="true">Returns</argument>
+            <argument name="path" xsi:type="string">returns</argument>
+          </arguments>
+        </block>
+        <block class="Magento\Framework\View\Element\Html\Link\Current" name="faq.link">
+          <arguments>
+            <argument name="label" xsi:type="string" translate="true">FAQs</argument>
+            <argument name="path" xsi:type="string">faqs</argument>
+          </arguments>
+        </block>
+        <block class="Magento\Framework\View\Element\Html\Link\Current" name="contact.link">
+          <arguments>
+            <argument name="label" xsi:type="string" translate="true">Contacting Us</argument>
+            <argument name="path" xsi:type="string">contact</argument>
+          </arguments>
+        </block>
+      </referenceBlock>
+
+      <referenceBlock name="what.footer.links">
+        <block class="Magento\Framework\View\Element\Html\Link\Current" name="products.link">
+          <arguments>
+            <argument name="label" xsi:type="string" translate="true">Our Products</argument>
+            <argument name="path" xsi:type="string">products</argument>
+          </arguments>
+        </block>
+        <block class="Magento\Framework\View\Element\Html\Link\Current" name="services.link">
+          <arguments>
+            <argument name="label" xsi:type="string" translate="true">Our Services</argument>
+            <argument name="path" xsi:type="string">services</argument>
+          </arguments>
+        </block>
+        <block class="Magento\Framework\View\Element\Html\Link\Current" name="installation.link">
+          <arguments>
+            <argument name="label" xsi:type="string" translate="true">Installations</argument>
+            <argument name="path" xsi:type="string">installation</argument>
+          </arguments>
+        </block>
+        <block class="Magento\Framework\View\Element\Html\Link\Current" name="cookies.link">
+          <arguments>
+            <argument name="label" xsi:type="string" translate="true">Using Cookies</argument>
+            <argument name="path" xsi:type="string">cookies</argument>
+          </arguments>
+        </block>
+      </referenceBlock>
+
+      <referenceBlock name="who.footer.links">
+        <block class="Magento\Framework\View\Element\Html\Link\Current" name="about.link">
+          <arguments>
+            <argument name="label" xsi:type="string" translate="true">About Us</argument>
+            <argument name="path" xsi:type="string">about</argument>
+          </arguments>
+        </block>
+        <block class="Magento\Framework\View\Element\Html\Link\Current" name="join.link">
+          <arguments>
+            <argument name="label" xsi:type="string" translate="true">Join Us</argument>
+            <argument name="path" xsi:type="string">join</argument>
+          </arguments>
+        </block>
+        <block class="Magento\Framework\View\Element\Html\Link\Current" name="blog.link">
+          <arguments>
+            <argument name="label" xsi:type="string" translate="true">Blog</argument>
+            <argument name="path" xsi:type="string">blog</argument>
+          </arguments>
+        </block>
+        <block class="Magento\Framework\View\Element\Html\Link\Current" name="responsibiliy.link">
+          <arguments>
+            <argument name="label" xsi:type="string" translate="true">Responsibilities</argument>
+            <argument name="path" xsi:type="string">responsibility</argument>
+          </arguments>
+        </block>
+      </referenceBlock>
+
+      <referenceBlock name="rtech.social.links">
+        <block class="Magento\Framework\View\Element\Text\TextList\Link" name="rtech.social.twitter">
+          <arguments>
+            <argument name="li_params" xsi:type="array">
+              <item name="class" xsi:type="string">item</item>
+            </argument>
+            <argument name="a_params" xsi:type="array">
+              <item name="class" xsi:type="string">twitter</item>
+              <item name="href" xsi:type="string">https://twitter.com</item>
+            </argument>
+          </arguments>
+        </block>
+        <block class="Magento\Framework\View\Element\Text\TextList\Link" name="rtech.social.facebook">
+          <arguments>
+            <argument name="li_params" xsi:type="array">
+              <item name="class" xsi:type="string">item</item>
+            </argument>
+            <argument name="a_params" xsi:type="array">
+              <item name="class" xsi:type="string">facebook</item>
+              <item name="href" xsi:type="string">https://facebook.com</item>
+            </argument>
+          </arguments>
+        </block>
+        <block class="Magento\Framework\View\Element\Text\TextList\Link" name="rtech.social.linkedin">
+          <arguments>
+            <argument name="li_params" xsi:type="array">
+              <item name="class" xsi:type="string">item</item>
+            </argument>
+            <argument name="a_params" xsi:type="array">
+              <item name="class" xsi:type="string">linkedin</item>
+              <item name="href" xsi:type="string">https://linkedin.com</item>
+            </argument>
+          </arguments>
+        </block>
+      </referenceBlock>
+
+      <move element="privacy-policy-link" destination="services_footer_links"/>
+    </body>
+</page>

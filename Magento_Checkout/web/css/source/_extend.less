@@ -1,0 +1,39 @@
+//**
+// Copyright © 2018 Roma Technology Ltd. All rights reserved.
+// See COPYING.txt for license details.
+//**
+@minicart-icons-color: @color-white;
+@minicart-icons-color-hover: @color-brand;
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+  .minicart-wrapper {
+    margin-top: 10px;
+    .lib-dropdown(
+    @_toggle-selector: ~'.action.showcart',
+    @_options-selector: ~'.block-minicart',
+    @_dropdown-list-width: 320px,
+    @_dropdown-list-position-right: 0px,
+    @_dropdown-list-pointer-position: right,
+    @_dropdown-list-pointer-position-left-right: 26px,
+    @_dropdown-list-z-index: 101,
+    @_dropdown-toggle-icon-content: @icon-cart,
+    @_dropdown-toggle-active-icon-content: @icon-cart,
+    @_dropdown-list-item-padding: false,
+    @_dropdown-list-item-hover: false,
+    @_icon-font-position: before,
+    @_icon-font-size: 26px,
+    @_icon-font-line-height: 28px,
+    @_icon-font-color: @minicart-icons-color,
+    @_icon-font-color-hover: @minicart-icons-color-hover,
+    @_icon-font-color-active: @minicart-icons-color
+    );
+  }
+}
+
+//
+//  Mobile
+//  _____________________________________________

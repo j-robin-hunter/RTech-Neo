@@ -4,39 +4,35 @@
 //**
 
 //
-// buttons
-//
-@button__border-radius: 6px;
-@button-primary__background: @color-brand;
-@button-primary__border: 2px solid @color-brand;
-@button-primary__color: @color-white;
-@button-primary__gradient-color-start: false;
-@button-primary__gradient-color-end: false;
-
-@button-primary__hover__background: fade(@color-brand, 0%);
-@button-primary__hover__border: 2px solid @color-brand;
-@button-primary__hover__color: @color-brand;
-@button-primary__hover__gradient-color-start: false;
-@button-primary__hover__gradient-color-end: false;
-
-@button-primary__active__background: @button-primary__hover__background;
-@button-primary__active__border: @button-primary__hover__border;
-@button-primary__active__color: @button-primary__color;
-@button-primary__active__gradient-color-start: false;
-@button-primary__active__gradient-color-end: false;
+// Variables
+@Grid_Container: 1200px;
+@Grid_Gutter: 16px;
+@Global_Radius: 6px;
+@Global_Transition: 0.2s;
+@Box_Shadow: 0 2px 20px 1px rgba(0, 0, 0, 0.10);
 
 //
 // Colors
-@color-brand: #84c1c1;
-@color-brand-secondary: #579aba;
+@Color_Brand: #84c1c1;
+@Color_Brand-secondary: #579aba;
 
-@header__background-color: @color-brand-secondary;
-@header-panel__background-color: @color-brand-secondary;
-@header-icons-color: @color-white;
-@header-icons-color-hover: @color-brand;
+@theme__color__primary: @Color_Brand;
+@theme__color__primary-alt: @color-gray43;
+@theme__color__secondary:  @Color_Brand-secondary;
 
-@footer__background-color: @color-gray46;
-@footer-links-color: @color-white;
-@footer-links-color-hover: @color-brand;
 
-@copyright__background-color: @color-gray46;
+.lib-transition_transform(
+	@_value
+) when not (@_value = '') {
+  -webkit-transition: -webkit-transform @_value;
+  -moz-transition: -moz-transform @_value;
+  -ms-transition: -ms-transform @_value;
+  transition: transform @_value;
+}.lib-transition (
+	@_value
+) when not (@_value = '') {
+  -webkit-transition: @_value;
+  -moz-transition: @_value;
+  -ms-transition: @_value;
+  transition: @_value;
+}

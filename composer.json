@@ -9,9 +9,7 @@
         "magento/framework": "*",
         "magento/theme-frontend-luma": "*",
         "magento/module-cms": "*",
-        "magento/checkout": "*",
-        "rtech/contact": "*"
-    },
+        "magento/checkout": "*"
     "type": "magento2-theme",
     "license": [
         "OSL-3.0",

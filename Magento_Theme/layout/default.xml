@@ -7,10 +7,28 @@
 -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
   <body>
+
+    <referenceBlock name="logo">
+      <arguments>
+        <argument name="logo_img_width" xsi:type="number">150</argument>
+        <argument name="logo_img_height" xsi:type="number">150</argument>
+      </arguments>
+    </referenceBlock>
+
+    <referenceContainer name="footer-container">
+      <block class="RTech\Contentful\Block\Footer" name="rtech_footer" before="footer"/>
+    </referenceContainer>
+
     <referenceBlock name="store_switcher" remove="true" />
     <referenceBlock name="footer_links" remove="true" />
     <referenceBlock name="report.bugs" remove="true" />
-    <referenceBlock name="form.subscribe" remove="true" />
+    <referenceBlock name="advanced-search-link" remove="true"/>
+    <referenceBlock name="wish-list-link" remove="true" />
+    <referenceBlock name="my-account-link" remove="true" />
+    <referenceBlock name="register-link" remove="true" />
+
+    <!-- <move element="form.subscribe" destination="before.body.end" after="siteContactLinks"/> -->
+    <!-- <move element="navigation.sections" destination="header.panel"/> -->
     <move element="copyright" destination="before.body.end"/>
   </body>
 </page>

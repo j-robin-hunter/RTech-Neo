@@ -1,0 +1,173 @@
+//**
+// Copyright © 2018 Roma Technology Ltd. All rights reserved.
+// See COPYING.txt for license details.
+//**
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+  .slidecard {
+    max-width: 215px;
+    width: 100%;
+    padding: 32px 26px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: @Global_Radius;
+    box-shadow: @Box_Shadow;
+    color: @color-gray43;
+    .lib-transition(all 0.4s);
+    overflow: hidden;
+    &:hover {
+      transform: translateY(-20px);
+      background-color: @color-brand;
+    }
+  }
+
+  .slidecard_Card {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+  }
+
+  .slidecard_Inner {
+    display: flex;
+    width: 100%;
+  }
+
+  .slidecard_Body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .slidecard_Icon {
+    display: block;
+    margin: 0 auto 32px;
+    svg {
+      width: 60px;
+      height: 60px;
+      fill: @color-brand;
+      .lib-transition(fill 0.4s);
+      .slidecard:hover & {
+        fill: #fff;
+      }
+    }
+  }
+
+  .slidecard_Title {
+    & p {
+      font-size: 22px;
+      line-height: 32px;
+    }
+    .lib-transition(color @Global_Transition);
+    .slidecard:hover & {
+      color: #fff;
+    }
+  }
+
+  .slidecard_Links {
+    margin-top: auto;
+    border-top: 32px solid transparent;
+    .lib-transition(all 0.4s);
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    li {
+      margin-bottom: 16px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .slidecard_Item {
+    .lib-transition_transform(@Global_Transition);
+    &:hover svg {
+      .lib-css(transform, translateX(10px), @_prefix: 1);
+    }
+  }
+
+  .slidecard_Link {
+    font-size: 14px;
+    line-height: 18px;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-align: left;
+    color: @color-gray43;
+    text-decoration: none;
+    .lib-transition(color 0.4s);
+    .slidecard:hover & {
+      color: #fff;
+    }
+    &:hover,
+    &:active,
+    &:visited {
+      text-decoration: none;
+    }
+    svg {
+      height: 18px;
+      width: 18px;
+      fill: @color-gray43;
+      margin-right: 10px;
+      .lib-transition(all 0.2s);
+      .slidecard:hover & {
+        fill: #fff;
+      }
+    }
+  }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+  .slidecard {
+    display: none;
+   }
+}
+
+//
+//  Tablet
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+  .slidecard_Title {
+    h4 {
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+
+  .slidecard_Link {
+    font-size: 12px;
+    line-height: 14px;
+  }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {  
+  .slidecard_Title {
+    h4 {
+      font-size: 22px;
+      line-height: 32px;
+    }
+  }
+
+  .slidecard_Link {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}

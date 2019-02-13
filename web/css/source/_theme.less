@@ -4,7 +4,15 @@
 //**
 
 //
-// Variables
+// Brand
+//  ---------------------------------------------
+@color-brand: #84c1c1;
+@color-brand-secondary:#579aba;
+@color-brand-grey: #a0a0a0;
+@color-brand-grey-light: #dbdbdb;
+@color-brand-grey-dark: #777;
+
+
 @Grid_Container: 1200px;
 @Grid_Gutter: 16px;
 @Global_Radius: 6px;
@@ -12,27 +20,35 @@
 @Box_Shadow: 0 2px 20px 1px rgba(0, 0, 0, 0.10);
 
 //
-// Colors
-@Color_Brand: #84c1c1;
-@Color_Brand-secondary: #579aba;
+//  Minicart
+//  ---------------------------------------------
+@minicart-icons-color: @color-white;
+@minicart-icons-color-hover: @color-brand;
 
-@theme__color__primary: @Color_Brand;
-@theme__color__primary-alt: @color-gray43;
-@theme__color__secondary:  @Color_Brand-secondary;
+//
+//  Header
+//  ---------------------------------------------
+@header-icons-color: @color-white;
+@header-icons-color-hover: @color-brand;
 
+//
+//  Buttons
+//  ---------------------------------------------
 
-.lib-transition_transform(
-	@_value
-) when not (@_value = '') {
-  -webkit-transition: -webkit-transform @_value;
-  -moz-transition: -moz-transform @_value;
-  -ms-transition: -ms-transform @_value;
-  transition: transform @_value;
-}.lib-transition (
-	@_value
-) when not (@_value = '') {
-  -webkit-transition: @_value;
-  -moz-transition: @_value;
-  -ms-transition: @_value;
-  transition: @_value;
-}
+//  Primary button
+@button-primary__color: @color-white;
+@button-primary__background: @color-brand;
+@button-primary__border: 1px solid @color-brand;
+@button-primary__hover__color: @color-brand;
+@button-primary__hover__background: @color-white-smoke;
+@button-primary__hover__border: 1px solid @color-white-smoke;
+@button-primary__active__background: @color-brand;
+@button-primary__active__border: 1px solid @color-brand;
+@button-primary__active__color: @color-white;
+
+//
+//  Copyright
+//  ---------------------------------------------
+@copyright__color: @color-white;
+@copyright__background-color:@color-brand-grey;
+@copyright__background-color:@color-brand-grey-dark;

@@ -1,0 +1,167 @@
+//**
+// Copyright © 2018 Roma Technology Ltd. All rights reserved.
+// See COPYING.txt for license details.
+//**
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+  .footerwidget {
+    padding: 20px 40px;
+    background-color: @color-brand-grey-dark;
+    color: @color-white;
+  }
+
+  .footerwidget_Title {
+    margin-top: 0px;
+    margin-bottom: 6px;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 600;
+  }
+
+  .footerwidget_InternalItem_Links {
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    & li {
+      padding: 8px 0px;
+      margin: 0;
+      border-width: 1px;
+      border-bottom: 1px solid;
+      border-color: #777;
+
+    }
+  }
+
+  .footerwidget_InternalItem_Link {
+    .lib-transition(@Global_Transition);
+    .lib-link(@color-white, none, @color-white, none, @color-brand, none);
+  }
+
+  .footerwidget_Contact_Info {
+    display: flex;
+    margin: 6px 0px;
+  }
+
+  .footerwidget_Contact_Info-Logo {
+    img {
+      height: 80px;
+    }
+  }
+
+  .footerwidget_Contact_Info-Details {
+    padding: 0px 15px;
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    li {
+      margin-bottom: 6px;
+    }
+  }
+
+  .footerwidget_Contact_Info-Link {
+    .lib-transition(@Global_Transition);
+    .lib-link(@color-white, none, @color-white, none, @color-brand, none);
+  }
+
+  .footerwidget_Contact_Social {
+    display: flex;
+  }
+
+  .footerwidget_SocialItem {
+    padding: 5px 10px;
+  }
+
+  .footerwidget_SocialItem_Link{
+    svg {
+      height: 24px;
+      width: 24px;
+      fill: @color-white;
+      .lib-transition(all @Global_Transition);
+      .footerwidget_SocialItem:visited &,
+      .footerwidget_SocialItem:active & {
+        fill: @color-white;
+      }
+      .footerwidget_SocialItem:hover & {
+        fill: @color-brand;
+      }
+    }
+  }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+  .footerwidget {
+    padding: 20px 20px;
+    padding-bottom: 0;
+  }
+
+   .footerwidget_Contact_Info {
+    display: none;
+  }
+
+  .footerwidget_Links_Info {
+    h4,
+    &.hide_responsive {
+      display: none
+    }
+  }
+
+  .footerwidget_Contact_Social {
+    margin-top: 20px;
+    justify-content: center;
+  }
+
+}
+
+//
+//  Tablet
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+  .footerwidget {
+    padding-bottom: 30px;
+  }
+
+  .footerwidget_Body {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .footerwidget_Links_Info {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 20px;
+  }
+
+  .footerwidget_InternalItem_Links {
+    li {
+      padding: 0 0;
+      border: none;
+      margin-bottom: 8px;
+      &:last-child {
+        margin-bottom: 0px;
+      }
+    }
+  }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+  .footerwidget_Links_Info {
+    margin-right: 60px;
+  }
+}

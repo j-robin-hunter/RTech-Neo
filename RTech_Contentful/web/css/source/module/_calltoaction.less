@@ -1,0 +1,117 @@
+//**
+// Copyright © 2018 Roma Technology Ltd. All rights reserved.
+// See COPYING.txt for license details.
+//**
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+  .calltoaction {
+    position: relative;
+    padding: 30px 0;
+    background-image: url('@{baseDir}RTech_Contentful/images/blue-sky.jpg');
+    background-size: cover;
+    overflow: hidden;
+  }
+
+  .calltoaction_Inner {
+    max-width: calc(@Grid_Container + (@Grid_Gutter * 2));
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 @Grid_Gutter;
+    box-sizing: border-box;
+  }
+
+  .calltoaction_Content {
+    margin-right: 40px;
+  }
+
+  .calltoaction_Title {
+    font-size: 34px;
+    line-height: 48px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-bottom: 32px;
+    color: #fff;
+  }
+
+  .calltoaction_Column-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .calltoaction_ImageContainer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    .lib-fix_object-fix();
+  }
+
+  .calltoaction_Image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .calltoaction_Content {
+    a {
+      text-transform: uppercase;
+      .lib-css(border-radius, @Global_Radius);
+      .lib-transition(@Global_Transition);
+      .lib-button-primary();
+      &:visited {
+        color: @color-white;
+      }
+      &:hover,
+      &:active,
+      &:focus {
+        text-decoration:none;
+        color: @color-brand;
+      }
+    }
+  }
+
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+  .calltoaction_Inner {
+    max-width: calc(@Grid_Container + (@Grid_Gutter * 4));
+    padding: 0 calc(@Grid_Gutter);
+  }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+  .calltoaction {
+    padding: 100px 0 100px;
+  }
+
+  .calltoaction_Inner {
+    padding: 0 calc(@Grid_Gutter * 2);
+  }
+
+  .calltoaction_Columns {
+    display: flex;
+  }
+
+  .calltoaction_Column {
+    width: 50%;
+  }
+
+  .calltoaction_Content {
+    margin-right: 100px;
+  }
+}

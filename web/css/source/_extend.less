@@ -1,0 +1,329 @@
+//**
+// Copyright © 2018 Roma Technology Ltd. All rights reserved.
+// See COPYING.txt for license details.
+//**
+
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+  h2 {
+    color:@color-brand-secondary;
+    font-size: 62px;
+    line-height: 72px;
+    font-weight: 600;
+  }
+
+  h3 {
+    color:@color-brand-secondary;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+    padding-left: 10px;
+  }
+
+  h4 {
+    color:@color-brand-secondary;
+    font-size: 28px;
+    line-height: 44px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+  }
+  a {
+    .lib-link(@color-brand, none, @color-brand, none, @color-brand, none);
+  }
+
+  .header {
+
+  }
+
+  .navigation {
+    background: none;
+    text-transform: uppercase;
+  }
+
+  .block-search {
+    .label {
+      color: @color-white;
+    }
+  }
+
+  .copyright {
+    .lib-css(background-color, @copyright__background-color);
+    .lib-css(color, @color-white);
+    box-sizing: border-box;
+    display: block;
+    padding: @indent__s;
+    text-align: center;
+  }
+
+  .page-header {
+    margin-bottom: 0;
+    .panel.wrapper {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 2;
+    }
+    .header.content {
+      position: absolute;
+      left: 25px;
+      right: 25px;
+      z-index: 1;
+      max-width: none;
+    }
+  }
+
+  .page-footer {
+    .footer.content {
+      max-width: none;
+      position: relative;
+      border: none;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .block.newsletter {
+    position: absolute;
+    margin: 0;
+    bottom: 10px;
+  }
+
+  .message.global {
+    &.cookie {
+      z-index: 100;
+      left: 5px;
+      right: 5px;
+      bottom: 5px;
+    }
+  }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+  .header.content {
+    position: absolute;
+    top: 0;
+  }
+
+  .page-header {
+    border-bottom: none;
+  }
+
+  .block-search .control {
+    border-top: none;
+  }
+
+  .block.newsletter {
+    left: 15px;
+    right: 15px;
+  }
+
+  .navigation {
+    & .level0 {
+      &.active,
+      &.hasactive {
+        & > a:not(.ui-state-active) {
+          border: none;
+          opacity: 0.5;
+          margin-left: 8px;
+        }
+      }
+      & > .level-top {
+        .lib-link(@color-gray34, none, @color-gray34, none, @color-white, none, @color-gray34, none);
+        &:hover {
+          background: @color-brand;
+        }
+      }
+    }
+    & .submenu {
+      &:not(:first-child) > li > a {
+        padding-left: 25px;
+      }
+      & > li {
+        & > a {
+          font-size: 14px;
+          .lib-link(@color-gray34, none, @color-gray34, none, @color-brand, none, @color-gray34, none);
+        }
+      }
+    }
+    & .all-category {
+      display: none;
+    }
+  }
+
+  .nav-sections-item-switch {
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    .lib-link(@color-gray34, none, @color-gray34, none, @color-brand, none, @color-gray34, none);
+  }
+
+  .nav-sections .header.links {
+    border-bottom: none;
+    & a {
+      text-transform: uppercase;
+      .lib-link(@color-gray34, none, @color-gray34, none, @color-brand, none, @color-gray34, none);
+    }
+  }
+}
+
+//
+//  Tablet
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+  h3 {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .page-header {
+    .panel.wrapper {
+      border-bottom: none;
+    }
+    & .header {
+      &.content {
+        top: 45px;
+      }
+      &.panel {
+        margin-top: 20px;
+        padding-top: 16px;
+      }
+      &.content {
+        padding-top: 0px;
+      }
+    }
+  }
+
+  .minicart-wrapper {
+    margin-top: 30px;
+  }
+
+  .header {
+    &.links {
+      & > li {
+        margin: 0;
+        &.welcome {
+          color: @color-white;
+          font-weight: 600;
+        }
+      }
+      a {
+        position: relative;
+        text-transform: uppercase;
+        font-weight: 600;
+        .lib-link(@color-white, none, @color-white, none, @color-white, none, @color-white, none);
+        &:hover {
+          &::before {
+            transform: translateX(-50%) scaleX(1);
+          }
+        }
+        &::before {
+          content: '';
+          position: absolute;
+          bottom: -4px;
+          height: 2px;
+          left: 50%;
+          width: 100%;
+          background-color: @color-white;
+          transform: translateX(-50%) scaleX(0);
+          .lib-transition_transform(0.2s);
+        }
+      }
+    }
+  }
+
+  .navigation {
+    position: absolute;
+    top: 20px;
+    left: 180px;
+    width: auto;
+    background: none;
+    & li.level0 {
+      padding-right: 20px;
+      & active {
+        border: none;
+        opacity: 0.5;
+        curosr: default;
+      }
+    }
+    & .level0 {
+      &.active,
+      &.hasactive {
+        & > .level-top {
+          border: none;
+          opacity: 0.5;
+          cursor: default;
+        }
+      }
+    }
+    &.parent > .level-top {
+      padding-right: 0;
+    }
+    & > .level-top {
+      padding: 0;
+      .lib-link(@color-white, none, @color-white, none, @color-white, none, @color-white, none);
+      & .ui-menu-icon:after {
+        width: 0;
+      }
+      &:active {
+        color: @color-white;
+        text-decoration: none;
+      }
+      &:hover,
+      &.ui-state-focus {
+        color: @color-white;
+        &::before {
+          transform: translateX(-50%) scaleX(1);
+        }
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: 15px;
+        left: 50%;
+        height: 2px;
+        width: 100%;
+        background-color: @color-white;
+        transform: translateX(-50%) scaleX(0);
+        .lib-transition_transform(0.2s);
+      }
+    }
+    & .submenu {
+      border: none;
+      & a:hover,
+      & a.ui-state-focus {
+        background: @color-brand;
+        color: white;
+      }
+    }
+  }
+
+.block-search {
+  margin-top:30px;
+}
+
+.block.newsletter {
+  width: 350px;
+  right: 45px;
+}
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+
+}

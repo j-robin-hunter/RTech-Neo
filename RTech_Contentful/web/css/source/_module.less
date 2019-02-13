@@ -1,0 +1,86 @@
+//**
+// Copyright © 2018 Roma Technology Ltd. All rights reserved.
+// See COPYING.txt for license details.
+//**
+
+//
+// mixins
+.lib-fix_object-fix(
+) {
+    &.compat-object-fit {
+    background-size: cover;
+    background-position: center center;
+    img {
+      opacity: 0;
+    }
+  }
+}
+
+.lib-transition_transform(
+	@_value
+) when not (@_value = '') {
+  -webkit-transition: -webkit-transform @_value;
+  -moz-transition: -moz-transform @_value;
+  -ms-transition: -ms-transform @_value;
+  transition: transform @_value;
+}
+
+.lib-transition (
+	@_value
+) when not (@_value = '') {
+  -webkit-transition: @_value;
+  -moz-transition: @_value;
+  -ms-transition: @_value;
+  transition: @_value;
+}
+
+.btn-Arrow {
+	display: inline-flex;
+	text-transform: uppercase;
+	font-weight: 600;
+	letter-spacing: 1px;
+	&_Icon {
+		margin-left: @Grid_Gutter;
+		.lib-transition_transform(@Global_Transition);
+		svg {
+			width: 20px;
+			height: 20px;
+		}
+	}
+	&:hover &_Icon {
+		.lib-css(transform, translateX(10px), @_prefix: 1);
+	}
+	&:visited, &:hover, &:active {
+		text-decoration: none;
+	}
+}
+
+.lib-btn-Arrow(
+  @color
+) when not (@color = '') {
+  .btn-Arrow {
+    color: @color;
+    &:hover,
+    &:visited,
+		&:active
+    {
+      color: @color;
+		}
+		&_Icon svg {
+			fill: @color;
+		}
+  }
+}
+
+
+//
+// Imports
+@import 'module/_textandimage.less';
+//@import 'module/_imageovertext.less';
+//@import 'module/_imagebehindtext.less';
+@import 'module/_simplehero.less';
+@import 'module/_elevatedcard.less';
+@import 'module/_calltoaction.less';
+@import 'module/_slidecard.less';
+@import 'module/_hero.less';
+@import 'module/_footer.less';

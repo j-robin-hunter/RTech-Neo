@@ -166,7 +166,7 @@
     font-size: 18px;
     font-weight: 600;
     text-transform: uppercase;
-    .lib-link(@color-gray34, none, @color-gray34, none, @color-brand, none, @color-gray34, none);
+      .lib-link(@color-gray34, none, @color-gray34, none, @color-brand, none, @color-gray34, none);
   }
 
   .nav-sections .header.links {
@@ -267,57 +267,57 @@
           cursor: default;
         }
       }
-    }
-    &.parent > .level-top {
-      padding-right: 0;
-    }
-    & > .level-top {
-      padding: 0;
-      .lib-link(@color-white, none, @color-white, none, @color-white, none, @color-white, none);
-      & .ui-menu-icon:after {
-        width: 0;
+      &.parent > .level-top {
+        padding-right: 0;
       }
-      &:active {
-        color: @color-white;
-        text-decoration: none;
-      }
-      &:hover,
-      &.ui-state-focus {
-        color: @color-white;
+      & > .level-top {
+        padding: 0;
+        .lib-link(@color-white, none, @color-white, none, @color-white, none, @color-white, none);
+        & .ui-menu-icon:after {
+          width: 0;
+        }
+        &:active {
+          color: @color-white;
+          text-decoration: none;
+        }
+        &:hover,
+        &.ui-state-focus {
+          color: @color-white;
+          &::before {
+            transform: translateX(-50%) scaleX(1);
+          }
+        }
         &::before {
-          transform: translateX(-50%) scaleX(1);
+          content: '';
+          position: absolute;
+          bottom: 15px;
+          left: 50%;
+          height: 2px;
+          width: 100%;
+          background-color: @color-white;
+          transform: translateX(-50%) scaleX(0);
+          .lib-transition_transform(0.2s);
         }
       }
-      &::before {
-        content: '';
-        position: absolute;
-        bottom: 15px;
-        left: 50%;
-        height: 2px;
-        width: 100%;
-        background-color: @color-white;
-        transform: translateX(-50%) scaleX(0);
-        .lib-transition_transform(0.2s);
-      }
-    }
-    & .submenu {
-      border: none;
-      & a:hover,
-      & a.ui-state-focus {
-        background: @color-brand;
-        color: white;
+      & .submenu {
+        border: none;
+        & a:hover,
+        & a.ui-state-focus {
+          background: @color-brand;
+          color: white;
+        }
       }
     }
   }
 
-.block-search {
-  margin-top:30px;
-}
+  .block-search {
+    margin-top:30px;
+  }
 
-.block.newsletter {
-  width: 350px;
-  right: 45px;
-}
+  .block.newsletter {
+    width: 350px;
+    right: 45px;
+  }
 }
 
 //

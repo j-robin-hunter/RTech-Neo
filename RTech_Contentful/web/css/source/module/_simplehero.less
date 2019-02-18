@@ -10,29 +10,21 @@
 & when (@media-common = true) {
   .simpleHero {
     position: relative;
-
     align-items: center;
     justify-content: center;
-
     display: flex;
     padding: 100px 0 60px;
-
     overflow: hidden;
-
     background-color: @color-brand-secondary;
-
     &::before {
       content: '';
-
       position: absolute;
       top: 0;
       right: 0;
       bottom: 0;
       left: 0;
       z-index: 1;
-
       background-color: @color-brand-secondary;
-
       opacity: 0.5;
     }
   }
@@ -43,7 +35,6 @@
     right: 0;
     bottom: 0;
     left: 0;
-
     object-fit: cover;
   }
 
@@ -51,7 +42,6 @@
     display: block;
     height: 100%;
     width: 100%;
-
     object-fit: cover;
   }
 
@@ -66,19 +56,16 @@
   .simpleHero_Body {
     position: relative;
     z-index: 2;
-
     text-align: center;
   }
 
-  .simpleHero_Kicker {
+  .simpleHero_Title {
     margin-bottom: 24px;
-
     font-size: 14px;
     font-weight: 600;
     line-height: 20px;
     text-transform: uppercase;
     letter-spacing: 2px;
-
     color: @color-white;
   }
 
@@ -88,7 +75,6 @@
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px;
-
     color: @color-white;
   }
 }
@@ -110,19 +96,15 @@
     padding: 130px 0 80px;
   }
 
-  .simpleHero_Kicker {
-    margin-bottom: 32px;
-  }
-
   .simpleHero_Body {
     width: calc(10 / 12 * 100%);
     margin: 0 auto;
   }
 
-  .simpleHero_Kicker {
+  .simpleHero_Title {
     font-size: 18px;
-
     line-height: 22px;
+    margin-bottom: 32px;
   }
 
   .simpleHero_Text {

@@ -6,6 +6,57 @@
 @font-family-name__base: 'Montserrat';
 @font-family__base: @font-family-name__base, @font-family__sans-serif;
 
+@h1__font-size: ceil((@font-size__base * 4.43)); // 62px
+@h1__font-color: @color-brand-secondary;
+@h1__font-weight: @font-weight__semibold;
+@h1__line-height: 1.1;
+@h1__margin-top: 0;
+@h1__margin-bottom: 0;
+@h1__font-size-desktop: ceil((@font-size__base * 2.85)); // 40px
+
+@h2__font-size: ceil((@font-size__base * 2.0)); // 28px
+@h2__font-color: @color-brand-secondary;
+@h2__font-weight: @font-weight__semibold;
+@h2__line-height: 1.7;
+@h2__margin-top: 0;
+@h2__margin-bottom: 6;
+
+@h3__font-size: ceil((@font-size__base * 1.28)); // 18px
+@h3__font-color: @color-brand-secondary;
+@h3__font-family: @heading__font-family__base;
+@h3__font-weight: @heading__font-weight__base;
+@h3__font-style: @heading__font-style__base;
+@h3__line-height: @heading__line-height__base;
+@h3__margin-top: @indent__base * .75;
+@h3__margin-bottom: @indent__s;
+
+@h4__font-size: @font-size__base; // 14px
+@h4__font-color: @heading__color__base;
+@h4__font-family: @heading__font-family__base;
+@h4__font-weight: @font-weight__bold;
+@h4__font-style: @heading__font-style__base;
+@h4__line-height: @heading__line-height__base;
+@h4__margin-top: @heading__margin-top__base;
+@h4__margin-bottom: @heading__margin-bottom__base;
+
+@h5__font-size: ceil((@font-size__base * .85)); // 12px
+@h5__font-color: @heading__color__base;
+@h5__font-family: @heading__font-family__base;
+@h5__font-weight: @font-weight__bold;
+@h5__font-style: @heading__font-style__base;
+@h5__line-height: @heading__line-height__base;
+@h5__margin-top: @heading__margin-top__base;
+@h5__margin-bottom: @heading__margin-bottom__base;
+
+@h6__font-size: ceil((@font-size__base * .7)); // 10px
+@h6__font-color: @heading__color__base;
+@h6__font-family: @heading__font-family__base;
+@h6__font-weight: @font-weight__bold;
+@h6__font-style: @heading__font-style__base;
+@h6__line-height: @heading__line-height__base;
+@h6__margin-top: @heading__margin-top__base;
+@h6__margin-bottom: @heading__margin-bottom__base;
+
 .lib-font-face(
   @family-name: @font-family-name__base,
   @font-path: '@{baseDir}fonts/montserrat/montserrat-v12-latin-regular',

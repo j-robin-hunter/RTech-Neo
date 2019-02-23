@@ -30,10 +30,12 @@
   .elevatedcard_Title {
     display: flex;
     justify-content: space-between;
-    & h4 {
-      color: @primary__color;
-      margin: 10px 0px;
-    }
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 32px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: @color-brand-secondary;
   }
 
   .elevatedcard_Content {
@@ -69,7 +71,9 @@
   }
 
   .elevatedcard_Text {
+    font-size: 16px;
     display: flex;
+    margin-top: 10px;
     flex-direction: column;
     *:last-child {
       margin-top: auto;
@@ -95,7 +99,7 @@
   .elevatedcard {
     flex-direction: column;
   }
-  
+
   .elevatedcard_Card {
     margin-bottom: @Grid_Gutter;
     margin-right: 0;

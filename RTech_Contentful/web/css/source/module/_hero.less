@@ -81,7 +81,7 @@
     line-height: 20px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: #fff;
+    color: @color-white;
   }
 
   .hero_Hero_Title {
@@ -90,7 +90,7 @@
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #fff;
+    color: @color-white;
     p {
       margin: 0;
     }
@@ -189,7 +189,7 @@
   .hero_Slide_Cards_Items {
     display: flex;
     margin: 0 -8px;
-    justify-content: space-between;
+    justify-content: space-around;
   }
 
   .hero_Slide_Cards_Item {
@@ -205,7 +205,7 @@
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
   .hero {
-    height: 610px;
+    padding-top: 110px;
   }
 
   .hero_Hero_Inner {

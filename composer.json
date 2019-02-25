@@ -9,6 +9,8 @@
         "magento/framework": "*",
         "magento/contact": "*",
         "magento/cookie": "*",
+        "magento/email": "*",
+        "magento/theme": "*",
         "magento/theme-frontend-blank": "*",
         "rtech/contentful": "*",
     "type": "magento2-theme",

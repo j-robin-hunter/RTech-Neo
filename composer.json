@@ -15,8 +15,9 @@
     "rtech/contentful": "^1.0.0"
   },
   "autoload": {
-  "files": [ "registration.php" ],
-  "psr-4": {
-    "RTech\\neo\\": ""
+    "files": [ "registration.php" ],
+    "psr-4": {
+      "RTech\\neo\\": ""
+    }
   }
 }

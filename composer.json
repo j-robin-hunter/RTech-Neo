@@ -1,26 +1,17 @@
 {
-    "name": "rtech/theme-frontend-neo",
-    "description": "Theme for RomaTech Magento Website",
-    "config": {
-        "sort-packages": true
-    },
-    "require": {
-        "php": "~7.1.3||~7.2.0",
-        "magento/framework": "*",
-        "magento/contact": "*",
-        "magento/cookie": "*",
-        "magento/email": "*",
-        "magento/theme": "*",
-        "magento/theme-frontend-blank": "*",
-        "rtech/contentful": "*",
-    "type": "magento2-theme",
-    "license": [
-        "OSL-3.0",
-        "AFL-3.0"
-    ],
-    "autoload": {
-        "files": [
-            "registration.php"
-        ]
+  "name": "rtech/neo",
+  "description": "Neo theme for Romatech Magento 2 Website",
+  "homepage": "http://www.romatech.co.uk",
+  "type": "magento2-theme",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Robin Hunter",
+      "email": "hello@romatech.co.uk"
     }
+  ],
+  "require": {
+    "php": "^7.2",
+    "rtech/contentful": "^1.0.0"
+  }
 }

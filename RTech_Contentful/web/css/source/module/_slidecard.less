@@ -70,17 +70,24 @@
     font-size: 22px;
     line-height: 32px;
     font-weight: 600;
+    margin-bottom: 5px;
     .lib-transition(color @Global_Transition);
     .slidecard:hover & {
       color: @color-white;
     }
   }
 
+  .slidecard_Text {
+    .slidecard:hover & {
+      color: @color-white;
+    }
+  }
+
   .slidecard_Links {
-    border-top: 16px solid transparent;
+    border-top: 0px solid transparent;
     margin-top: auto;
     ul {
-      border-top: 16px solid transparent;
+      border-top: 5px solid transparent;
       margin: 0;
       padding: 0;
       list-style: none;

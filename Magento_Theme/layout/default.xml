@@ -27,6 +27,8 @@
     <referenceBlock name="my-account-link" remove="true" />
     <referenceBlock name="register-link" remove="true" />
     <referenceBlock name="page.main.title" remove="true"/>
+    <referenceBlock name="minicart" remove="true"/>
+    <referenceBlock name="top.search" remove="true"/>
 
     <!-- <move element="form.subscribe" destination="before.body.end" after="siteContactLinks"/> -->
     <!-- <move element="navigation.sections" destination="header.panel"/> -->

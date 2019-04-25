@@ -10,7 +10,7 @@
     <referenceContainer name="header.container">
       <block class="Magento\Cms\Block\Block" name="hero">
         <arguments>
-          <argument name="block_id" xsi:type="string">your_account_hero</argument>
+          <argument name="block_id" xsi:type="string">compare_products_hero</argument>
         </arguments>
       </block>
     </referenceContainer>

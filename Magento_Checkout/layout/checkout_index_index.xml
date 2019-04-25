@@ -10,9 +10,13 @@
     <referenceContainer name="header.container">
       <block class="Magento\Cms\Block\Block" name="hero">
         <arguments>
-          <argument name="block_id" xsi:type="string">your_account_hero</argument>
+          <argument name="block_id" xsi:type="string">checkout_hero</argument>
         </arguments>
       </block>
     </referenceContainer>
+
+    <referenceBlock name="header.panel" remove="true" />
+    <referenceBlock name="minicart" remove="true"/>
+    <referenceBlock name="top.search" remove="true"/>
   </body>
 </page>

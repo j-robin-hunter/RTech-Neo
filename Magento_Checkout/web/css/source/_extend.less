@@ -1,0 +1,32 @@
+//**
+// Copyright © 2018 Roma Technology Ltd. All rights reserved.
+// See COPYING.txt for license details.
+//**
+
+//
+//  Variables
+//  _____________________________________________
+@minicart-icons-color: @color-white;
+@minicart-icons-color-hover: @color-brand;
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+  .minicart-wrapper {
+    & .action.showcart {
+      & .counter.qty {
+        .lib-css(background, @color-white);
+        .lib-css(color, @color-brand-secondary);
+      }
+    }
+  }
+
+  .opc-progress-bar {
+    &:extend(.abs-reset-list all);
+    .lib-css(margin, 20px 0 20px);
+    counter-reset: i;
+    font-size: 0;
+  }
+}

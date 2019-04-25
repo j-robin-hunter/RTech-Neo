@@ -12,18 +12,11 @@
 @color-brand-grey-light: #dbdbdb;
 @color-brand-grey-dark: #777;
 
-
 @Grid_Container: 1200px;
 @Grid_Gutter: 16px;
 @Global_Radius: 6px;
 @Global_Transition: 0.2s;
 @Box_Shadow: 0 2px 20px 1px rgba(0, 0, 0, 0.15);
-
-//
-//  Minicart
-//  ---------------------------------------------
-@minicart-icons-color: @color-white;
-@minicart-icons-color-hover: @color-brand;
 
 //
 //  Header
@@ -46,6 +39,17 @@
 @button-primary__active__border: 1px solid @color-brand;
 @button-primary__active__color: @color-white;
 @button__line-height: 16;
+
+//  Default = secondary button
+@button__color: @color-white;
+@button__background: @color-brand;
+@button__border: 1px solid @color-brand;
+@button__hover__color: @color-brand;
+@button__hover__background: @color-white-smoke;
+@button__hover__border: 1px solid @color-white-smoke;
+@button__active__color: @color-white;
+@button__active__background:  @color-brand;
+@button__active__border: 1px solid @color-brand;
 
 //
 //  Copyright
@@ -99,3 +103,31 @@
 @pager-action__color: @color-brand;
 @pager-action__border: none;
 @pager-action__hover__color: @color-brand-secondary;
+
+//  Form
+@form-fieldset-legend__font-size: 18px;
+@form-fieldset-legend__font-weight: @font-weight__light;
+@form-fieldset-legend__margin: 0 0 @indent__base;
+@form-fieldset-legend__padding: 0 0 @indent__s;
+@form-fieldset-legend__width: 100%;
+@form-field-type-revert: false;
+@form-field__additional-vertical-indent: @indent__s;
+@form-field-label__font-weight: @font-weight__semibold;
+@form-field-type-label-block__margin: 0 0 8px;
+@form-field-note-icon-font__content: false;
+@form-element-input-placeholder__color: @color-gray34;
+
+// Icons
+@icon-compare-full: '\e600';
+@icon-compare-full: '\e61e';
+
+//  Tabs
+@tab-control__color: @color-gray43;
+@tab-control__font-weight: @font-weight__regular;
+@tab-control__height: @indent__base*2;
+@tab-control__margin-right: -1px;
+@tab-control__padding-top: 1px;
+@tab-control__padding-right: 35px;
+@tab-content__padding-top: 35px;
+@tab-content__padding-right: @tab-control__padding-right;
+@tab-content__border-top-status: false;

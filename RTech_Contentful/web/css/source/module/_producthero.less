@@ -1,0 +1,130 @@
+//**
+// Copyright © 2018 Roma Technology Ltd. All rights reserved.
+// See COPYING.txt for license details.
+//**
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+  .productHero {
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    padding: 100px 0 60px;
+    overflow: hidden;
+    z-index: 0;
+    background-color: @color-brand-secondary;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      background-color: @color-brand-secondary;
+      opacity: 0.5;
+    }
+  }
+
+  .productHero_ImageContainer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    object-fit: cover;
+  }
+
+  .productHero_Image {
+    display: block;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .productHero_Inner {
+    max-width: calc(@Grid_Container + (@Grid_Gutter * 2));
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 @Grid_Gutter;
+    box-sizing: border-box;
+  }
+
+  .productHero_Body {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+  }
+
+  .productHero_Title {
+    margin-bottom: 24px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: @color-white;
+  }
+
+  .productHero_Text {
+    font-size: 26px;
+    line-height: 42px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: @color-white;
+  }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+
+}
+
+//
+//  Tablet
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+  .productHero {
+    padding: 130px 0 60px;
+  }
+
+  .productHero_Body {
+    width: calc(10 / 12 * 100%);
+    margin: 0 auto;
+  }
+
+  .productHero_Title {
+    font-size: 18px;
+    line-height: 22px;
+    margin-bottom: 32px;
+  }
+
+  .productHero_Text {
+    font-size: 34px;
+    line-height: 60px;
+  }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+  .productHero {
+    padding: 150px 0 80px;
+  }
+
+  .productHero_Text {
+    font-size: 38px;
+    line-height: 64px;
+  }
+}

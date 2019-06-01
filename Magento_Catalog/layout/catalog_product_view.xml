@@ -10,6 +10,13 @@
     <referenceContainer name="product.info.price">
       <block class="RTech\Contentful\Block\PriceTaxLabel" name="rtech_excl_tax"  after="product.price.final"/>
     </referenceContainer>
+    <referenceContainer name="header.container">
+      <block class="Magento\Cms\Block\Block" name="hero">
+        <arguments>
+          <argument name="block_id" xsi:type="string">all_products_hero</argument>
+        </arguments>
+      </block>
+    </referenceContainer>
 
     <block class="Magento\Theme\Block\Html\Title" name="product.title" template="Magento_Theme::html/title.phtml"/>
 

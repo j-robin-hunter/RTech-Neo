@@ -12,7 +12,8 @@
   ],
   "require": {
     "php": "^7.2",
-    "rtech/contentful": "^1.0.0"
+    "rtech/contentful": "^1.0.0",
+    "rtech/zoho": "^1.0.0"
   },
   "autoload": {
     "files": [ "registration.php" ]

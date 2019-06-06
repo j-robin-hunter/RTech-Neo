@@ -15,8 +15,8 @@ $welcomeMessage = $block->getWelcome();
     case 'welcome': ?>
         <li class="greet welcome" data-bind="scope: 'customer'">
             <!-- ko if: customer().fullname  -->
-            <span class="logged-in" data-bind="text: new String('<?= $block->escapeHtml(__('%1', '%1')) ?>').replace('%1', customer().firstname)">
-            </span>
+            <a href="<?= $this->getBaseUrl() ?>/customer/account" style="text-transform: none;"><span class="logged-in" data-bind="text: new String('<?= $block->escapeHtml(__('%1', '%1')) ?>').replace('%1', customer().firstname)">
+              </span></a>
             <!-- /ko -->
             <!-- ko ifnot: customer().fullname  -->
             <span class="not-logged-in" data-bind='html:"<?= $block->escapeHtml($welcomeMessage) ?>"'></span>

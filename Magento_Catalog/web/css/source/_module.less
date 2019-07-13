@@ -83,28 +83,12 @@
   //  -----------------------------------------
 
   .product-image-container {
-    display: inline-block;
-    max-width: 100%;
   }
 
   .product-image-wrapper {
-    display: block;
-    height: 0;
-    overflow: hidden;
-    position: relative;
-    z-index: 1;
   }
 
   .product-image-photo {
-    bottom: 0;
-    display: block;
-    height: auto;
-    left: 0;
-    margin: auto;
-    max-width: 100%;
-    position: absolute;
-    right: 0;
-    top: 0;
   }
 
   //
@@ -519,6 +503,13 @@
   //  -----------------------------------------
 
   .sidebar {
+    .block {
+      margin: 15px 0 10px 0;
+    }
+    .block-title {
+      padding-bottom: 10px;
+      margin-bottom: 0px;
+    }
     .product-items {
       .product-item {
         margin-bottom: @indent__base;
@@ -526,13 +517,13 @@
       }
 
       .product-item-info {
+        display: flex;
+        flex-direction: column;
         position: relative;
         width: auto;
 
         .product-item-photo {
-          left: 0;
-          position: absolute;
-          top: 0;
+
         }
       }
 
@@ -541,7 +532,7 @@
       }
 
       .product-item-details {
-        margin: 0 0 0 85px;
+        margin: 0 0 0 0px;
       }
 
       .product-item-actions {
@@ -595,7 +586,6 @@
     }
 
     .action.tocart {
-      border-radius: 0;
     }
 
     .subtitle {
@@ -659,6 +649,12 @@
       .lib-vendor-prefix-order(-1);
     }
   }
+
+  .sidebar {
+    .product-items {
+      display: block;
+    }
+  }
 }
 
 //
@@ -697,10 +693,21 @@
 }
 
 //
-//  Desktop
+//  Tablet
 //  _____________________________________________
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+  .sidebar {
+    .product-items {
+      display: none;
+    }
+  }
+}
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
   .product-info-main {
     .page-title-wrapper {
       h1 {
@@ -792,6 +799,7 @@
 
   .sidebar {
     .product-items {
+      display: block;
       .product-item-info {
         .product-item-photo {
           float: left;
@@ -832,16 +840,11 @@
     .product-items {
       .product-item-info {
         .product-item-photo {
-          float: none;
-          left: 0;
-          margin: 0;
-          position: absolute;
-          top: 0;
+
         }
       }
 
       .product-item-details {
-        margin-left: 85px;
       }
     }
   }

@@ -1,0 +1,157 @@
+<?php
+/**
+* Copyright © 2018 Roma Technology Limited. All rights reserved.
+* See COPYING.txt for license details.
+*/
+use Magento\Framework\App\Action\Action;
+?>
+
+<?php
+$_productCollection = $block->getLoadedProductCollection();
+$_helper = $this->helper(Magento\Catalog\Helper\Output::class);
+?>
+<?php if (!$_productCollection->count()) :?>
+<div class="message info empty"><div><?= $block->escapeHtml(__('We can\'t find products matching the selection.')) ?></div></div>
+<?php else :?>
+<?= $block->getToolbarHtml() ?>
+<?= $block->getAdditionalHtml() ?>
+<?php
+  /**
+* Position for actions regarding image size changing in vde if needed
+*/
+  $imageDisplayArea = 'category_page_grid';
+?>
+<div class="products wrapper">
+  <section class="slidecardcontainer">
+    <div class="slidecardcontainer_Items">
+      <?php /** @var $_product \Magento\Catalog\Model\Product */ ?>
+      <?php foreach ($_productCollection as $_product) :?>
+      <div class="slidecard">
+        <div class="slidecard_Card">
+          <div class="slidecard_Inner">
+            <div class="slidecard_Body">
+              <a class="slidecard_Link" href="<?= $block->escapeUrl($_product->getProductUrl()) ?>"></a>
+              <div class="slidecard_Image">
+                <?php
+                $productImage = $block->getImage($_product, $imageDisplayArea);
+                ?>
+                <?= $productImage->toHtml() ?>
+              </div>
+              <div class="slidecard_Title">
+                <?= /* @noEscape */ $_helper->productAttribute($_product, $_product->getName(), 'name') ?>
+              </div>
+              <div class="slidecard_Text">
+                <?= /* @noEscape */ $_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description') ?>
+              </div>
+              <div class="slidecard_Links">
+                <ul>
+                  <li class="slidecard_Item">
+                    <a class="slidecard_Item_Link" href="<?= $block->escapeUrl($_product->getProductUrl()) ?>">
+                      <?= $block->getReviewsSummaryHtml($_product, \Magento\Catalog\Block\Product\ReviewRendererInterface::SHORT_VIEW) ?>
+                    </a>
+                  </li>
+                  <li class="slidecard_Item">
+                    <div class="price_actions_secondary">
+                      <div class="slidecard_Item_Link">
+                        <?= /* @noEscape */ $block->getProductPrice($_product) ?>
+                      </div>
+                      <div class="actions-secondary">
+                        <?php if ($addToBlock = $block->getChildBlock('addto')) :?>
+                        <?= $addToBlock->setProduct($_product)->getChildHtml() ?>
+                        <?php endif; ?>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <?php endforeach; ?>
+    </div>
+  </section>
+</div>
+<?= $block->getToolbarHtml() ?>
+<?php if (!$block->isRedirectToCartEnabled()) :?>
+<script type="text/x-magento-init">
+{
+"[data-role=tocart-form], .form.map.checkout": {
+"catalogAddToCart": {
+"product_sku": "<?= $block->escapeJs($_product->getSku()) ?>"
+}
+}
+}
+</script>
+<?php endif; ?>
+<?php endif; ?>
+
+<?php
+// The following scripts are a hacky way to keep the page from scrolling when a new set of products is loaded.
+// A less hacky way would be to load the script as per Magento guidlines and an even better way would be
+// to use Ajax to prevent page reload. Time resulted in the way this has been done.
+?>
+<script type="text/javascript">
+  /*!
+* Scroll Sneak
+* http://mrcoles.com/scroll-sneak/
+*
+* Copyright 2010, Peter Coles
+* Licensed under the MIT licenses.
+* http://mrcoles.com/media/mit-license.txt
+*
+* Date: Mon Mar 8 10:00:00 2010 -0500
+*/
+  var ScrollSneak = function(prefix, wait) {
+    // clean up arguments (allows prefix to be optional - a bit of overkill)
+    if (typeof(wait) == 'undefined' && prefix === true) prefix = null, wait = true;
+    prefix = (typeof(prefix) == 'string' ? prefix : window.location.host).split('_').join('');
+    var pre_name;
+
+    // scroll function, if window.name matches, then scroll to that position and clean up window.name
+    this.scroll = function() {
+      if (window.name.search('^'+prefix+'_(\\d+)_(\\d+)_') == 0) {
+        var name = window.name.split('_');
+        window.scrollTo(name[1], name[2]);
+        window.name = name.slice(3).join('_');
+      }
+    }
+    // if not wait, scroll immediately
+    if (!wait) this.scroll();
+
+    this.sneak = function() {
+      // prevent multiple clicks from getting stored on window.name
+      if (typeof(pre_name) == 'undefined') pre_name = window.name;
+
+      // get the scroll positions
+      var top = 0, left = 0;
+      if (typeof(window.pageYOffset) == 'number') { // netscape
+        top = window.pageYOffset, left = window.pageXOffset;
+      } else if (document.body && (document.body.scrollLeft || document.body.scrollTop)) { // dom
+        top = document.body.scrollTop, left = document.body.scrollLeft;
+      } else if (document.documentElement && (document.documentElement.scrollLeft || document.documentElement.scrollTop)) { // ie6
+        top = document.documentElement.scrollTop, left = document.documentElement.scrollLeft;
+      }
+      // store the scroll
+      if (top || left) window.name = prefix + '_' + left + '_' + top + '_' + pre_name;
+      return true;
+    }
+  }
+</script>
+<script type="text/javascript">
+  (function() {
+    var sneaky = new ScrollSneak(location.hostname);
+
+    var list = document.getElementsByClassName('pages-items');
+    var i = 0;
+    var len = list.length;
+    for(; i<len;i++) {
+      var anchors = list[i].getElementsByTagName('a');
+      var j = 0;
+      var jlen = anchors.length;
+      for (; j < jlen; j++) {
+        anchors[j].onclick = sneaky.sneak;
+      }
+    }
+  })();
+</script>

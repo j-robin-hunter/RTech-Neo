@@ -1,0 +1,53 @@
+//**
+// Copyright © 2019 Roma Technology Ltd. All rights reserved.
+// See COPYING.txt for license details.
+//**
+
+//
+//  Variables
+//  _____________________________________________
+
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+  .block-reorder {
+    .block-title {
+      strong {
+        .lib-typography(
+          @_font-size: @font-size__base,
+          @_color: @text__color,
+          @_font-family: @font-family__base,
+          @_font-weight: @font-weight__bold,
+          @_line-height: @line-height__base,
+          @_font-style: @font-style__base
+        );
+      }
+    }
+  }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+}
+
+//
+//  Tablet
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+
+}

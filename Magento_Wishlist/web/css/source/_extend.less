@@ -1,5 +1,5 @@
 //**
-// Copyright © 2018 Roma Technology Ltd. All rights reserved.
+// Copyright © 2019 Roma Technology Ltd. All rights reserved.
 // See COPYING.txt for license details.
 //**
 
@@ -13,14 +13,127 @@
 //  _____________________________________________
 
 & when (@media-common = true) {
-  .product-items,
-  .products.list.items,
-  .table-comparison {
-    .action {
-      &.towishlist {
-        &:extend(.abs-actions-addto-gridlist all);
-        .lib-icon-font(@icon-wishlist-full, @icon-font, 29px);
+  .wishlist-index-index {
+    .product {
+      &-item {
+        &-info {
+        }
+      }
+    }
+
+    .main {
+      .form-wishlist-items {
+        .actions-toolbar {
+          &:extend(.abs-reset-left-margin-desktop all);
+        }
       }
     }
   }
+  .block-wishlist {
+    .block-title {
+      strong {
+        .lib-typography(
+          @_font-size: @font-size__base,
+          @_color: @text__color,
+          @_font-family: @font-family__base,
+          @_font-weight: @font-weight__bold,
+          @_line-height: @line-height__base,
+          @_font-style: @font-style__base
+        );
+      }
+    }
+  }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__s) {
+  .products-grid.wishlist {
+    .product {
+      &-item {
+        &-name,
+        .price-box, {
+          margin-left: 0px;
+        }
+      }
+    }
+  }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+  .wishlist-index-index {
+    .product {
+      &-item {
+        &-info {
+        }
+      }
+    }
+
+    .main {
+      .form-wishlist-items {
+        .actions-toolbar {
+          &:extend(.abs-reset-left-margin-desktop all);
+        }
+      }
+    }
+  }
+  
+  .products-grid.wishlist {
+    .product {
+      &-item {
+        &-name,
+        .price-box, {
+          margin-left: 95px;
+        }
+      }
+    }
+  }
+}
+
+//
+//  Tablet
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+  .wishlist-index-index {
+    .product {
+      &-item {
+        &-info {
+        }
+      }
+    }
+
+    .main {
+      .form-wishlist-items {
+        .actions-toolbar {
+          &:extend(.abs-reset-left-margin-desktop all);
+        }
+      }
+    }
+  }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+  .wishlist-index-index {
+    .products-grid {
+      .product-items {
+        margin: 0;
+      }
+
+      .product-item {
+        margin-left: calc(~'(100% - 4 * 24.439%)');
+        padding: 0;
+        width: 24.439%;
+
+        &:nth-child(4n + 1) {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
 }

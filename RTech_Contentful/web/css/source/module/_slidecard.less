@@ -67,8 +67,8 @@
   }
 
   .slidecard_Title {
-    font-size: 22px;
-    line-height: 32px;
+    font-size: 18px;
+    line-height: 26px;
     font-weight: 600;
     margin-bottom: 5px;
     .lib-transition(color @Global_Transition);
@@ -109,6 +109,60 @@
     &:hover svg {
       .lib-css(transform, translateX(10px), @_prefix: 1);
     }
+    .price_actions_secondary {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .action.towishlist {
+      &:hover, &:active, &:focus {
+        background: none;
+        border: none;
+        padding: 0;
+        .lib-typography(14, @color-brand, inherit, inherit, 2.8rem);
+      }
+      background: none;
+      border: none;
+      padding: 0;
+      vertical-align: top;
+      .lib-typography(14, @color-brand, inherit, inherit, 2.8rem);
+      &:before {
+        .lib-typography(28, @color-brand, 'icons-blank-theme', inherit, 2.8rem);
+        display: inline-block;
+        vertical-align: top;
+        text-align: center;
+        .slidecard:hover & {
+          color:  @color-white;
+        }
+      }
+      span {
+        display: none;
+      }
+
+      .lib-icon-font-symbol(
+        @_icon-font-content: @icon-wishlist-full,
+        @_icon-font-position: before
+      );
+    }
+    .action.tocompare {
+      &:extend(.abs-actions-addto all);
+      &:before {
+        .lib-typography(28, @color-brand, 'icons-blank-theme', inherit, 2.8rem);
+        display: inline-block;
+        vertical-align: top;
+        text-align: center;
+        .slidecard:hover & {
+          color:  @color-white;
+        }
+      }
+      span {
+        display: none;
+      }
+      .lib-icon-font-symbol(
+        @_icon-font-content: @icon-compare-full,
+        @_icon-font-position: before
+      );
+    }
   }
 
   .slidecard_Item_Link {
@@ -146,6 +200,7 @@
     max-height: 200px;
     max-width: 100%;
   }
+
 }
 
 //

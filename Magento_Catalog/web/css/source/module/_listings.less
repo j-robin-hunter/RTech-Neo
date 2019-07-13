@@ -1,5 +1,5 @@
 //**
-// Copyright © 2018 Roma Technology Ltd. All rights reserved.
+// Copyright © 2019 Roma Technology Ltd. All rights reserved.
 // See COPYING.txt for license details.
 //**
 
@@ -27,6 +27,16 @@
 //  _____________________________________________
 
 & when (@media-common = true) {
+  .product-reviews-summary {
+    .rating-summary {
+      margin: 0 4px 0 0;
+    }
+
+    .reviews-actions {
+      display: none;
+    }
+  }
+  
   //  Product Lists
   .products {
     margin: @indent__l 0;
@@ -43,7 +53,7 @@
       vertical-align: top;
 
       .products-grid & {
-        display: inline-block;
+        display: flex;
         margin-left: 2%;
         width: calc(~'(100% - 2%)/2');
       }
@@ -66,7 +76,7 @@
       }
 
       &-info {
-        max-width: 100%;
+        max-width: 80%;
         width: 152px;
 
         .page-products & {
@@ -127,7 +137,7 @@
       }
 
       .price-box {
-        margin: @indent__s 0 @indent__m;
+        margin: @indent__s 0 0;
 
         .price {
           font-weight: @font-weight__bold;
@@ -175,7 +185,6 @@
 
       .tocart {
         .lib-font-size(13px);
-        border-radius: 0;
         line-height: 1;
         padding-bottom: @indent__s;
         padding-top: @indent__s;
@@ -188,6 +197,7 @@
     .product {
       &-items {
         margin-left: 0;
+        display: flex;
       }
 
       &-item {
@@ -277,18 +287,28 @@
       }
     }
   }
+
+  .column.main {
+    .product {
+      &-items {
+        flex-direction: column;
+      }
+    }
+  }
+
 }
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__s) {
   .product-item-info {
+    padding: 30px 19px;
+    border-radius: @Global_Radius;
+    box-shadow: 0 2px 20px 1px rgba(0, 0, 0, 0.15);
     .products-grid & {
       &:hover,
       &.active {
         .lib-css(background, @product-item__hover__background-color);
-        .lib-css(box-shadow, @product-item__hover__box-shadow);
-        border: 1px solid @color-gray-light2;
-        margin: -10px;
-        padding: 9px;
+        .lib-css(box-shadow,  @Box_Shadow);
+        padding: 30px 19px;
         position: relative;
         z-index: 2;
 
@@ -308,15 +328,15 @@
   .product-item-inner {
     .products-grid & {
       .lib-css(background, @product-item__hover__background-color);
-      .lib-css(box-shadow, @product-item__hover__box-shadow);
-      border: 1px solid @color-gray-light2;
+      .lib-css(box-shadow, @Box_Shadow_Bottom);
       border-top: none;
-      left: 0;
+      left: 1px;
       margin: 10px 0 0 -1px;
       padding: 0 9px 9px;
       position: absolute;
-      right: -1px;
+      right: 0px;
       z-index: 2;
+      border-radius: 0 0 @Global_Radius @Global_Radius;
     }
   }
 
@@ -364,7 +384,6 @@
     }
 
     .product-item-actions {
-      position: relative;
       z-index: 1;
     }
   }
@@ -427,7 +446,7 @@
         width: calc(~'(100% - 4%) / 3');
 
         &:nth-child(3n + 1) {
-          margin-left: 0;
+          margin-left: 20px;
         }
       }
     }
@@ -482,15 +501,15 @@
 
       .product-item {
         margin-left: 2%;
-        padding: 5px;
+        padding: 20px;
         width: calc(~'(100% - 6%)/4');
-
-        &:nth-child(3n + 1) {
-          margin-left: 2%;
-        }
-
-        &:nth-child(4n + 1) {
+        margin: 0 20px;
+        flex: 1;
+        &:first-child {
           margin-left: 0;
+        }
+        &:last-child {
+          margin-right: 0;
         }
       }
     }

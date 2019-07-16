@@ -239,8 +239,11 @@
 
   .slidecard_Text {
     max-height: 20rem;
-    overflow-y: auto;
+    overflow-y: hidden;
     z-index: 2;
+    .slidecard:hover & {
+      overflow-y: auto;
+    }
   }
 
   .slidecard_Link {

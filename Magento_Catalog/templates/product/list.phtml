@@ -41,7 +41,9 @@ $_helper = $this->helper(Magento\Catalog\Helper\Output::class);
                 <?= /* @noEscape */ $_helper->productAttribute($_product, $_product->getName(), 'name') ?>
               </div>
               <div class="slidecard_Text">
+                <a class="slidecard_Text_Link" href="<?= $block->escapeUrl($_product->getProductUrl()) ?>">
                 <?= /* @noEscape */ $_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description') ?>
+                </a>
               </div>
               <div class="slidecard_Links">
                 <ul>

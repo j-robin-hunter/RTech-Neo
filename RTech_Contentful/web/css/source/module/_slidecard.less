@@ -165,6 +165,18 @@
     }
   }
 
+  .slidecard_Text_Link {
+    .lib-link(
+      @color-brand-grey-dark, none,
+      @color-brand-grey-dark, none,
+      @color-brand-grey-dark, none,
+      @color-brand-grey-dark, none);
+    .lib-transition(color 0.4s);
+    .slidecard:hover & {
+      color: @color-white;
+    }
+  }
+
   .slidecard_Item_Link {
     font-size: 14px;
     line-height: 18px;
@@ -225,6 +237,12 @@
     }
   }
 
+  .slidecard_Text {
+    max-height: 20rem;
+    overflow-y: auto;
+    z-index: 2;
+  }
+
   .slidecard_Link {
     font-size: 12px;
     line-height: 14px;
@@ -240,4 +258,5 @@
     font-size: 14px;
     line-height: 18px;
   }
+
 }

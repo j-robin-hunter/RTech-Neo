@@ -1,0 +1,13 @@
+<?php
+/**
+* Copyright 2019 © Roma Technology Ltd. All rights reserved.
+* See COPYING.txt for license details.
+**/
+?>
+<?php /** @var $block \Magento\Catalog\Block\Product\Image */ ?>
+
+
+<img class="<?= $block->escapeHtmlAttr($block->getClass()) ?> slidecard_Image-Img"
+     <?= $block->escapeHtmlAttr($block->getCustomAttributes()) ?>
+     src="<?= $block->escapeUrl($block->getImageUrl()) ?>"
+     alt="<?= /* @noEscape */ $block->stripTags($block->getLabel(), null, true) ?>"/>

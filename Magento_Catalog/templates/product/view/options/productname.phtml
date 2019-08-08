@@ -1,0 +1,13 @@
+<?php
+/**
+* Copyright © 2019 Roma Technology Limited. All rights reserved.
+* See COPYING.txt for license details.
+*/
+?>
+<?php if ($block->getProduct()->getName()) : ?>
+<div class="product-header-wrapper">
+    <h2 class="page-header">
+        <?= /* @noEscape */ $block->getProduct()->getName() ?>
+    </h2>
+</div>
+<?php endif; ?>

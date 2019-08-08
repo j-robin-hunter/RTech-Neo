@@ -18,9 +18,9 @@
       </block>
     </referenceContainer>
 
-    <block class="Magento\Theme\Block\Html\Title" name="product.title" template="Magento_Theme::html/title.phtml"/>
+    <block class="Magento\Catalog\Block\Product\View" name="productname" template="Magento_Catalog::product/view/options/productname.phtml"/>
 
-    <move element="product.title" destination="product.info.main" before="-"/>
+    <move element="productname" destination="product.info.main" before="-"/>
     <move element="product.info.review" destination="product.info.main" before="product.info.price"/>
 
     <referenceBlock name="product.info.stock.sku" remove="true" />

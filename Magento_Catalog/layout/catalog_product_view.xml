@@ -18,6 +18,15 @@
       </block>
     </referenceContainer>
 
+    <referenceBlock name="product.info.details">
+      <block class="Magento\Catalog\Block\Product\View" name="installation.tab" as="installation" template="product/view/installation.phtml" group="detailed_info" >
+        <arguments>
+          <argument translate="true" name="title" xsi:type="string">Installation</argument>
+          <argument name="sort_order" xsi:type="string">15</argument>
+        </arguments>
+      </block>
+    </referenceBlock>
+
     <block class="Magento\Catalog\Block\Product\View" name="productname" template="Magento_Catalog::product/view/options/productname.phtml"/>
 
     <move element="productname" destination="product.info.main" before="-"/>

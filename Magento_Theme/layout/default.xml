@@ -26,8 +26,9 @@
     <referenceBlock name="wish-list-link" remove="true" />
     <referenceBlock name="my-account-link" remove="true" />
     <referenceBlock name="register-link" remove="true" />
-    <referenceBlock name="page.main.title" remove="true"/>
 
+    <referenceBlock name="page.main.title" remove="true"/>
+    
     <!-- <move element="form.subscribe" destination="before.body.end" after="siteContactLinks"/> -->
     <!-- <move element="navigation.sections" destination="header.panel"/> -->
     <move element="copyright" destination="before.body.end"/>

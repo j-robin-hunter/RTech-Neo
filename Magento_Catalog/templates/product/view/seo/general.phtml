@@ -1,0 +1,23 @@
+<?php
+/**
+* Copyright © 2019 Roma Technology Limited. All rights reserved.
+* See COPYING.txt for license details.
+*/
+?>
+<div style="display: none;">
+  <span itemprop="name"><?= $block->getProduct()->getName() ?></span>
+  <span itemprop="description"><?= $block->getProduct()->getShortDescription() ?></span>
+  <span itemprop="sku"><?= $block->getProduct()->getSku() ?></span>
+  <span itemprop="image"><?= $block->escapeUrl($block->getImage($block->getProduct(), 'product_base_image')->getImageUrl()) ?></span>
+  <ul>
+    <?php
+      // To make sure all products are crawled, get all the url's for child products of composite, bundled and grouped products
+      $product = $block->getProduct();
+      if (in_array($product->getTypeId(), ['configurable', 'grouped', 'bundle'])) {
+        foreach ($product->getTypeInstance()->getUsedProducts($product) as $child) {
+          printf('<li><a href="%s"></a>%s</li>', $block->escapeUrl($child->getProductUrl()), $block->stripTags($child->getName()));
+        }
+      }
+    ?>
+  </ul>
+</div>

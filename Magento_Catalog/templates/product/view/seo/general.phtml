@@ -5,8 +5,8 @@
 */
 ?>
 <div style="display: none;">
-  <span itemprop="name"><?= $block->getProduct()->getName() ?></span>
-  <span itemprop="description"><?= $block->getProduct()->getShortDescription() ?></span>
+  <span itemprop="name"><?= $block->getProduct()->getMetaTitle() ?></span>
+  <span itemprop="description"><?= $block->getProduct()->getMetaDescription() ?></span>
   <span itemprop="sku"><?= $block->getProduct()->getSku() ?></span>
   <span itemprop="image"><?= $block->escapeUrl($block->getImage($block->getProduct(), 'product_base_image')->getImageUrl()) ?></span>
   <ul>

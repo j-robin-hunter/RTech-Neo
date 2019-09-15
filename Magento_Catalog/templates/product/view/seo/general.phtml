@@ -4,15 +4,20 @@
 * See COPYING.txt for license details.
 */
 ?>
+<?php
+$product = $block->getProduct();
+$brandAttr = $product->getResource()->getAttribute('manufacturer');
+$brand = $brandAttr ? $brandAttr->getFrontend()->getValue($product) : '';
+?>
 <div style="display: none;">
-  <span itemprop="name"><?= $block->getProduct()->getMetaTitle() ?></span>
-  <span itemprop="description"><?= $block->getProduct()->getMetaDescription() ?></span>
-  <span itemprop="sku"><?= $block->getProduct()->getSku() ?></span>
-  <span itemprop="image"><?= $block->escapeUrl($block->getImage($block->getProduct(), 'product_base_image')->getImageUrl()) ?></span>
+  <span itemprop="name"><?= $product->getMetaTitle() ?></span>
+  <span itemprop="description"><?= $product->getMetaDescription() ?></span>
+  <span itemprop="sku"><?= $product->getSku() ?></span>
+  <span itemprop="image"><?= $block->escapeUrl($block->getImage($product, 'product_base_image')->getImageUrl()) ?></span>
+  <span itemprop="brand"><?= $brand ?></span>
   <ul>
     <?php
       // To make sure all products are crawled, get all the url's for child products of composite, bundled and grouped products
-      $product = $block->getProduct();
       if (in_array($product->getTypeId(), ['configurable', 'grouped', 'bundle'])) {
         foreach ($product->getTypeInstance()->getUsedProducts($product) as $child) {
           printf('<li><a href="%s"></a>%s</li>', $block->escapeUrl($child->getProductUrl()), $block->stripTags($child->getName()));

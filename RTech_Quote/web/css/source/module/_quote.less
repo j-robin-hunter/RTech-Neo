@@ -1,0 +1,114 @@
+//**
+// Copyright © 2019 Roma Technology Ltd. All rights reserved.
+// See COPYING.txt for license details.
+//**
+
+//
+//  Variables
+//  _____________________________________________
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+  .energy_Basic,
+  .energy_Edit {
+    display: flex;
+    margin: 30px 0;
+  }
+
+  .form-energy-model {
+    display: table;
+    width: 100%;
+    .field-tooltip-content {
+      &::before {
+        padding: 0 5px;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-size: 24px;
+        line-height: inherit;
+        color: #bbbbbb;
+        content: '\e623';
+        font-family: 'icons-blank-theme';
+        vertical-align: middle;
+        display: inline-block;
+        font-weight: normal;
+        overflow: hidden;
+        speak: none;
+        text-align: center;
+      }
+    }
+  }
+
+  .block-title {
+    .lib-css(color, @color-brand-secondary);
+    font-size: 20px;
+    line-height: 44px;
+    letter-spacing: 1px;
+    padding-bottom: 0;
+  }
+
+  .energyModel {
+    > .item {
+      display: flex;
+      margin-left: 10px;
+      .label {
+        font-weight: 600;
+        width: 150px;
+      }
+    }
+    .actions-toolbar {
+       button {
+         margin-top: 10px;
+      }
+      .primary:not(:last-child) {
+        button {
+          margin-right: 10px;
+        }
+      }
+    }
+    .params:not(:last-child) {
+      margin-bottom: 10px;
+    }
+
+    span.truncate {
+      max-width: 300px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+
+  .energy-model-toolbar {
+    text-align: center;
+    .limiter {
+      float: right;
+    }
+  }
+
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+
+}
+
+//
+//  Tablet
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+
+}

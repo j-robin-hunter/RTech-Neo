@@ -24,10 +24,16 @@
                 <input name="email" id="email" title="<?= $block->escapeHtmlAttr(__('Email')) ?>" value="<?= $block->escapeHtmlAttr($this->helper('Magento\Contact\Helper\Data')->getPostValue('email') ?: $this->helper('Magento\Contact\Helper\Data')->getUserEmail()) ?>" class="input-text" type="email" data-validate="{required:true, 'validate-email':true}"/>
             </div>
         </div>
-        <div class="field telephone">
+        <div class="field telephone required">
             <label class="label" for="telephone"><span><?= $block->escapeHtml(__('Phone Number')) ?></span></label>
             <div class="control">
-                <input name="telephone" id="telephone" title="<?= $block->escapeHtmlAttr(__('Phone Number')) ?>" value="<?= $block->escapeHtmlAttr($this->helper('Magento\Contact\Helper\Data')->getPostValue('telephone')) ?>" class="input-text" type="text" />
+                <input name="telephone" id="telephone" title="<?= $block->escapeHtmlAttr(__('Phone Number')) ?>" value="<?= $block->escapeHtmlAttr($this->helper('Magento\Contact\Helper\Data')->getPostValue('telephone')) ?>" class="input-text" type="text" data-validate="{required:true}"/>
+            </div>
+        </div>
+        <div class="field subject required">
+            <label class="label" for="subject"><span><?= $block->escapeHtml(__('What would you like to tell us about?')) ?></span></label>
+            <div class="control">
+                <input name="subject" id="subject" title="<?= $block->escapeHtmlAttr(__('What would you like to tell us about?')) ?>" value="<?= $block->escapeHtml(__('A general enquiry')) ?>" class="input-text" type="text" data-validate="{required:true}"/>
             </div>
         </div>
         <div class="field comment required">

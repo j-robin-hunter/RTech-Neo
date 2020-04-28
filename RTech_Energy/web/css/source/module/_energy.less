@@ -1,0 +1,183 @@
+//**
+// Copyright © 2019 Roma Technology Ltd. All rights reserved.
+// See COPYING.txt for license details.
+//**
+
+//
+//  Variables
+//  _____________________________________________
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+  .energy_Basic,
+  .energy_Edit {
+    display: flex;
+    margin: 30px 0;
+  }
+
+  .form-energy-project {
+    display: table;
+    width: 100%;
+    .field-tooltip-content {
+      &::before {
+        padding: 0 5px;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-size: 24px;
+        line-height: inherit;
+        color: #bbbbbb;
+        content: '\e623';
+        font-family: 'icons-blank-theme';
+        vertical-align: middle;
+        display: inline-block;
+        font-weight: normal;
+        overflow: hidden;
+        speak: none;
+        text-align: center;
+      }
+    }
+  }
+
+  .block-title {
+    .lib-css(color, @color-brand-secondary);
+    font-size: 20px;
+    line-height: 44px;
+    letter-spacing: 1px;
+    padding-bottom: 0;
+  }
+
+  .energyProject {
+    > .item {
+      display: flex;
+      margin-left: 10px;
+      .label {
+        font-weight: 600;
+        width: 150px;
+      }
+    }
+
+    .actions-toolbar {
+       button {
+         margin-top: 10px;
+      }
+      .primary:not(:last-child) {
+        button {
+          margin-right: 10px;
+        }
+      }
+    }
+
+    .params:not(:last-child) {
+      margin-bottom: 10px;
+    }
+
+    span.truncate {
+      max-width: 300px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .results-container {
+      margin-top: 15px;
+    }
+
+    .model-help {
+      margin-top: 10px;
+      &:before {
+        padding: 0 5px;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-size: 24px;
+        line-height: inherit;
+        color: #bbbbbb;
+        content: '\e623';
+        font-family: 'icons-blank-theme';
+        vertical-align: middle;
+        display: inline-block;
+        font-weight: normal;
+        overflow: hidden;
+        speak: none;
+        text-align: center;
+        cursor: pointer;      
+      }
+    }
+  }
+
+  .energy-project-toolbar {
+    text-align: center;
+    .limiter {
+      float: right;
+    }
+  }
+
+  table.table-project-items {
+    .truncate {
+      max-width: 150px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+
+}
+
+//
+//  Tablet
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+
+  .basic_Form_Container,
+  .edit_Form_Container {
+    flex: 1;
+  }
+
+  .location_Map_Container {
+    flex: 1;
+    height: auto;
+    margin-left: 20px;
+    .map {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .basic_location_container {
+    display: flex;
+    .basic_Location {
+      width: 100%;
+      margin-right: 5px;
+    }
+  }
+
+  .energyProject {
+    & .container {
+      display: flex;
+      & .project-container {
+        flex: 1;
+      }
+      & .project-inputs-container {
+        flex: 1;
+      }
+    }
+  }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+
+}

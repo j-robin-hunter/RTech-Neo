@@ -19,7 +19,7 @@ $brand = $brandAttr ? $brandAttr->getFrontend()->getValue($product) : '';
     <?php
       // To make sure all products are crawled, get all the url's for child products of composite, bundled and grouped products
       if (in_array($product->getTypeId(), ['configurable', 'grouped', 'bundle'])) {
-        foreach ($product->getTypeInstance()->getUsedProducts($product) as $child) {
+        foreach ($product->getTypeInstance()->getAssociatedProducts($product) as $child) {
           printf('<li><a href="%s"></a>%s</li>', $block->escapeUrl($child->getProductUrl()), $block->stripTags($child->getName()));
         }
       }

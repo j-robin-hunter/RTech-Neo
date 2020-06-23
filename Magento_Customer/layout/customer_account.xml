@@ -5,7 +5,7 @@
 * See COPYING.txt for license details.
 **/
 -->
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
   <body>
     <referenceContainer name="header.container">
       <block class="Magento\Cms\Block\Block" name="hero">
@@ -13,6 +13,10 @@
           <argument name="block_id" xsi:type="string">your_account_hero</argument>
         </arguments>
       </block>
+    </referenceContainer>
+
+    <referenceContainer name="content" htmlTag="div" htmlClass="container">
+      <container name="customer.account.dashboard.rtech.blocks" as="rtech_blocks" after="address"/>
     </referenceContainer>
 
     <referenceBlock name="customer-account-navigation-billing-agreements-link" remove="true"/>
